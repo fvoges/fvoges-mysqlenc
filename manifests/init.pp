@@ -51,7 +51,7 @@ class mysqlenc (
     path    => "${::pe::puppetmaster::confdir}/puppet.conf",
     section => "master",
     setting => "external_nodes",
-    value   => "${install_dir}/mysql-cert-autosign.rb",
+    value   => "${install_dir}/mysql-enc.rb",
     require => File["${install_dir}/mysql-enc.rb"],
     notify  => Service['pe-httpd'],
   }
