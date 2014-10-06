@@ -38,7 +38,7 @@ class mysqlenc (
 
   ini_setting { 'Puppet Node Terminus':
     ensure  => present,
-    path    => "${confdir}/puppet.conf",
+    path    => "${::pe::puppetmaster::confdir}/puppet.conf",
     section => "master",
     setting => "node_terminus",
     value   => "exec",
@@ -48,7 +48,7 @@ class mysqlenc (
 
   ini_setting { 'Puppet ENC':
     ensure  => present,
-    path    => "${confdir}/puppet.conf",
+    path    => "${::pe::puppetmaster::confdir}/puppet.conf",
     section => "master",
     setting => "external_nodes",
     value   => "${install_dir}/mysql-cert-autosign.rb",
