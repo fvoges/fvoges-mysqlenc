@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/opt/puppet/bin/ruby
 # Author: Federico Voges
 # License: Apache 2.0
 # Project URL: https://github.com/fvoges/mysql-enc
