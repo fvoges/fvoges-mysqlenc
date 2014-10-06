@@ -26,7 +26,7 @@ class mysqlenc (
     mode   => '0755',
     owner  => 'pe-puppet',
     group  => 'pe-puppet',
-    require => File["${install_dir}/mysql-enc.yaml"]
+    require => File["${install_dir}/mysql-enc.yaml"],
   }
   file { "${install_dir}/mysql-enc.yaml":
     ensure  => file,
@@ -42,7 +42,7 @@ class mysqlenc (
     section => "master",
     setting => "node_terminus",
     value   => "exec",
-    require => File["${install_dir}/mysql-enc.rb"]
+    require => File["${install_dir}/mysql-enc.rb"],
     notify  => Service['pe-httpd'],
   }
 
@@ -52,7 +52,7 @@ class mysqlenc (
     section => "master",
     setting => "external_nodes",
     value   => "${install_dir}/mysql-cert-autosign.rb",
-    require => File["${install_dir}/mysql-enc.rb"]
+    require => File["${install_dir}/mysql-enc.rb"],
     notify  => Service['pe-httpd'],
   }
 
