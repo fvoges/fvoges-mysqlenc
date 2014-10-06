@@ -22,7 +22,7 @@ class mysqlenc (
 
   file { "${install_dir}/mysql-enc.rb":
     ensure => file,
-    source => "puppet:///${module_name}/mysql-enc.rb",
+    source => "puppet:///modules/${module_name}/mysql-enc.rb",
     mode   => '0755',
     owner  => 'pe-puppet',
     group  => 'pe-puppet',
