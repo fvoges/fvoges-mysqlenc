@@ -59,12 +59,12 @@ parameters = {}
 params = db.query(query)
 if params.any?
   params.each do |parameter|
-  	parameters[parameter['parameter'].to_s] = parameter['value'].to_s
+    parameters[parameter['parameter'].to_s] = parameter['value'].to_s
     log.debug "Node #{certname} parameter #{parameter['parameter'].to_s} = #{parameter['value'].to_s}"
   end
 end
 
-output = { 'classes'    => role,
+output = { 'classes'    => Array(role),
            'parameters' => parameters
 }
 
